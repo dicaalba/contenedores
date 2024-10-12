@@ -6,13 +6,13 @@ WORKDIR /python
 
 # Copiamos los archivos necesarios
 COPY python/requirements.txt requirements.txt
-COPY python/index.py index.py
+COPY python/app.py app.py
 
 # Instalamos las dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Exponer el puerto 5000 
-EXPOSE 5000
+# Exponer el puerto 5001 
+EXPOSE 5001
 
 # Ejecutar el comando de inicio de Python
-CMD ["python", "index.py"]
+CMD ["python", "app.py"]
