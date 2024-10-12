@@ -1,0 +1,18 @@
+# Imagen base para Node.js
+FROM node:18-alpine
+
+# Establecemos el directorio de trabajo
+WORKDIR /nodejs
+
+# Copiamos los archivos necesarios
+COPY nodejs/package.json package.json
+COPY nodejs/app.js app.js
+
+# Instalamos las dependencias
+RUN npm install
+
+# Exponer el puerto 3000 
+EXPOSE 3000
+
+# Ejecutar el comando de inicio de Node.js
+CMD ["node", "app.js"]
